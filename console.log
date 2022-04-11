@@ -1,4 +1,3 @@
-2022-04-11 20:02:32.897 DEBUG 76459 --- [kground-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -8,17 +7,17 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.2.2.RELEASE)
 
-2022-04-11 20:02:32.980  INFO 76459 --- [           main] c.x.s.e.SpiderExecutorApplication        : Starting SpiderExecutorApplication v1.0-SNAPSHOT on leodeiMac-Pro.local with PID 76459 (/Users/zhangjie/jack/workspace/spider-executor/target/spider-executor-1.0-SNAPSHOT.jar started by zhangjie in /Users/zhangjie/jack/workspace/spider-executor)
-2022-04-11 20:02:32.981  INFO 76459 --- [           main] c.x.s.e.SpiderExecutorApplication        : No active profile set, falling back to default profiles: default
-2022-04-11 20:02:33.818  INFO 76459 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 30520 (http)
-2022-04-11 20:02:33.828  INFO 76459 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-11 20:02:33.829  INFO 76459 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
-2022-04-11 20:02:33.876  INFO 76459 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-11 20:02:33.876  INFO 76459 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 718 ms
-2022-04-11 20:02:33.930  INFO 76459 --- [           main] c.x.spider.executor.config.XxlJobConfig  : >>>>>>>>>>> xxl-job config init.
-2022-04-11 20:02:34.009  INFO 76459 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2022-04-11 20:02:34.204  INFO 76459 --- [           main] c.xxl.job.core.executor.XxlJobExecutor   : >>>>>>>>>>> xxl-job register jobhandler success, name:hg_ver, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@35e2d654[class com.xinbo.spider.executor.handle.ShellHandle#hgVer]
-2022-04-11 20:02:34.204  INFO 76459 --- [           main] c.xxl.job.core.executor.XxlJobExecutor   : >>>>>>>>>>> xxl-job register jobhandler success, name:hg_check_user, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@1bd4fdd[class com.xinbo.spider.executor.handle.ShellHandle#hgCheckUser]
-2022-04-11 20:02:34.283  INFO 76459 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 30520 (http) with context path ''
-2022-04-11 20:02:34.286  INFO 76459 --- [           main] c.x.s.e.SpiderExecutorApplication        : Started SpiderExecutorApplication in 1.652 seconds (JVM running for 1.974)
-2022-04-11 20:02:34.374  INFO 76459 --- [       Thread-5] com.xxl.job.core.server.EmbedServer      : >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 48501
+2022-04-11 22:14:01.787  INFO 80647 --- [           main] c.x.s.e.SpiderExecutorApplication        : Starting SpiderExecutorApplication v1.0-SNAPSHOT on leodeiMac-Pro.local with PID 80647 (/Users/zhangjie/jack/workspace/spider-executor/target/spider-executor-1.0-SNAPSHOT.jar started by zhangjie in /Users/zhangjie/jack/workspace/spider-executor)
+2022-04-11 22:14:01.789  INFO 80647 --- [           main] c.x.s.e.SpiderExecutorApplication        : No active profile set, falling back to default profiles: default
+2022-04-11 22:14:02.592  INFO 80647 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 48500 (http)
+2022-04-11 22:14:02.601  INFO 80647 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-11 22:14:02.602  INFO 80647 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2022-04-11 22:14:02.648  INFO 80647 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-11 22:14:02.648  INFO 80647 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 683 ms
+2022-04-11 22:14:02.698  INFO 80647 --- [           main] c.x.spider.executor.config.XxlJobConfig  : >>>>>>>>>>> xxl-job config init.
+2022-04-11 22:14:02.787  INFO 80647 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-04-11 22:14:02.967  INFO 80647 --- [           main] c.xxl.job.core.executor.XxlJobExecutor   : >>>>>>>>>>> xxl-job register jobhandler success, name:hg_ver, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@6aeb35e6[class com.xinbo.spider.executor.handle.ShellHandle#hgVer]
+2022-04-11 22:14:02.968  INFO 80647 --- [           main] c.xxl.job.core.executor.XxlJobExecutor   : >>>>>>>>>>> xxl-job register jobhandler success, name:hg_check_user, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@1283bb96[class com.xinbo.spider.executor.handle.ShellHandle#hgCheckUser]
+2022-04-11 22:14:03.052  INFO 80647 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 48500 (http) with context path ''
+2022-04-11 22:14:03.055  INFO 80647 --- [           main] c.x.s.e.SpiderExecutorApplication        : Started SpiderExecutorApplication in 1.773 seconds (JVM running for 2.095)
+2022-04-11 22:14:03.142  INFO 80647 --- [       Thread-5] com.xxl.job.core.server.EmbedServer      : >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 48501

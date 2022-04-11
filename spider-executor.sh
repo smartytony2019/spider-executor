@@ -15,6 +15,10 @@ EXECUTOR_IP="192.168.91.100"
 ###  XXL通信端口
 XXL_PORT=48501
 
+###  XXL通信地址
+XXL_ADDRESSES="http://192.168.80.64:8055/xxl-job-admin"
+
+
 ### ------------------------------  1 - 可配置参数 - end  ---------------------------------
 
 
@@ -23,12 +27,12 @@ XXL_PORT=48501
 
 ### ------------------------------  2 - 业务开始 - start  ---------------------------------
 SERVER_PORT="-Dserver.port=${SERVER_PORT}"
-SERVER_PORT="-Dspring.application.name=${APP_NAME}"
 APP_NAME="-Dxxl.job.executor.appname=${APP_NAME}"
 EXECUTOR_IP="-Dxxl.job.executor.ip=${EXECUTOR_IP}"
 XXL_PORT="-Dxxl.job.executor.port=${XXL_PORT}"
+XXL_ADDRESSES="-Dxxl.job.admin.addresses=${XXL_ADDRESSES}"
 
-PARAMS="${SERVER_PORT} ${APP_NAME} ${EXECUTOR_IP} ${XXL_PORT}"
+PARAMS="${SERVER_PORT} ${APP_NAME} ${EXECUTOR_IP} ${XXL_PORT} ${XXL_ADDRESSES}"
 
 ### java ${PARAMS} -jar target/spider-executor-1.0-SNAPSHOT.jar
 
@@ -36,28 +40,43 @@ PARAMS="${SERVER_PORT} ${APP_NAME} ${EXECUTOR_IP} ${XXL_PORT}"
 
 ### 重启
 restart() {
-  exit 0
+  stop
+  start
 }
 
 ### 停止
 stop() {
-  ps -ef | grep -e "$APP_NAME" | grep -v grep | awk '{print $2}' | xargs kill -9
+  if [[ `ps -ef | grep -e "$APP_NAME" | grep -v grep | wc -l` -gt 0 ]]
+  then
+      kill -9 $(ps -ef | grep -e "$APP_NAME" | grep -v grep | awk '{print $2}')
+  fi
 }
+
 ### 启动
 start() {
   nohup java ${PARAMS} -jar target/spider-executor-1.0-SNAPSHOT.jar > ./console.log 2>&1 &
 #  java ${PARAMS} -jar target/spider-executor-1.0-SNAPSHOT.jar
-
 }
 
+### 状态
+status() {
+  if [[ `ps -ef | grep -e "$APP_NAME" | grep -v grep | wc -l` -gt 0 ]]
+  then
+      echo -e "\033[32m ***  services is running *** \033[0m"
+      exit 0
+  fi
+
+  echo -e "\033[33m ***  services not found *** \033[0m"
+}
 
 usage(){
     cat <<EOF
 Usage:
-    ./spider-executor.sh [start/stop/restart]
+    ./spider-executor.sh [start/stop/restart/status]
     start                   (Start services)
     stop                    (stop services)
     restart                 (restart services)
+    status                  (status services)
 EOF
     exit 1
 }
@@ -78,6 +97,8 @@ case "$COMMAND" in
   "stop") stop
   ;;
   "restart") restart
+  ;;
+  "status") status
   ;;
   *) usage
     ;;
